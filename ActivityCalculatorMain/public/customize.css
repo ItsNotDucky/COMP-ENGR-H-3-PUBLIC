@@ -1,0 +1,62 @@
+body
+{
+	background-color: lightblue;
+	text-align: center;
+	zoom: 250%;
+}
+label
+{
+	font-family: Arial;
+	text-align: center;
+}
+input
+{
+	background-color: black;
+	color: lightblue;
+	text-align: right;
+	font-family: Arial;
+	width: 292px;
+}
+input[id="txtnumdisplay"]
+{
+	border-bottom: none;
+	position: relative;
+	top: 2px;
+}
+input[id="txtoutputdisplay"]
+{
+	border-top: none;
+}
+button
+{
+	margin-left: -2px;
+	margin-right: -2px;
+	width: 50px;
+	height: 25px;
+}
+button[name="dark"]
+{
+	color: white;
+	background-color: gray;
+}
+button[name="light"]
+{
+	background-color: lightgray;
+}
+button[id="btnenter"]
+{
+	color: white;
+	background-color: blue;
+}
+button[id="btnradians"]
+{
+	width: 100px;
+}
+button[id="btndegrees"]
+{
+	width: 100px;
+}
+button[id="btn0"]
+{
+	width: 100px;
+}
