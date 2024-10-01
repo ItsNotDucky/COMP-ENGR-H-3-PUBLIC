@@ -185,7 +185,6 @@ function enter() {
 		} else if (operation == "sin" || operation == "cos" || operation == "tan") {
 			tempnumstate("outputdisplay2");
 		} if (operation == "addition" || operation == "subtraction" || operation == "multiplication" || operation == "division") {
-			operation = "enter";
 			outputnum = document.getElementById("txtoutputdisplay").value;
 			tempnum = document.getElementById("txtnumdisplay").value;
 			arithmeticoperation();
