@@ -82,21 +82,22 @@ function checkvalue()
 }
 function arithmeticoperation()
 {
-	switch (operation)
-		{
-			case "addition":
-				outputnum = parseFloat(tempnum) + parseFloat(outputnum);
-				break;
-			case "subtraction":
-				outputnum = parseFloat(tempnum) - parseFloat(outputnum);
-				break;
-			case "multiplication":
-				outputnum = parseFloat(tempnum) * parseFloat(outputnum);
-				break;
-			case "division":
-				outputnum = parseFloat(tempnum) / parseFloat(outputnum);
-				break;
-		}
+	if (operation == "addition")
+	{
+		outputnum = parseFloat(tempnum) + parseFloat(outputnum);
+	}
+	else if (operation == "subtraction")
+	{
+		outputnum = parseFloat(tempnum) - parseFloat(outputnum);
+	}
+	else if (operation == "multiplication")
+	{
+		outputnum = parseFloat(tempnum) * parseFloat(outputnum);
+	}
+	else if (operation == "division")
+	{
+		outputnum = parseFloat(tempnum) / parseFloat(outputnum);
+	}
 }
 function numdisplaychange()
 {
@@ -126,80 +127,92 @@ function outputdisplaychange()
 		operation = lastoperation;
 	}
 	arithmeticoperation()
-	switch (operation)
+	if (operation == "percent")
 	{
-		case "percent":
-			outputnum = (parseFloat(tempnum) * parseFloat(outputnum)) / 100;
-			break;
-		case "square":
-			outputnum = parseFloat(tempnum) * parseFloat(tempnum);
-			break;
-		case "radians":
-			outputnum = parseFloat(tempnum) * (3.14 / 100);
-			break;
-		case "degrees":
+		outputnum = (parseFloat(tempnum) * parseFloat(outputnum)) / 100;
+	}
+	else if (operation == "square")
+	{
+		outputnum = parseFloat(tempnum) * parseFloat(tempnum);
+	}
+	else if (operation == "radians")
+	{
+		outputnum = parseFloat(tempnum) * (3.14 / 100);
+	}
+	else if (operation == "degrees")
+	{
 			outputnum = parseFloat(tempnum) * (100 / 3.14);
-			break;
-		case "flip":
-			outputnum = parseFloat(tempnum) * -1;
-			break;
-		case "power":
-			outputnum = Math.pow(parseFloat(tempnum), parseFloat(outputnum));
-			break;
-		case "naturallog":
-			outputnum = Math.log(parseFloat(tempnum));
-			break;
-		case "log":
-			outputnum = Math.log10(parseFloat(tempnum));
-			break;
-		case "sin":
-			outputnum = Math.sin(parseFloat(tempnum));
-			break;
-		case "cos":
-			outputnum = Math.cos(parseFloat(tempnum));
-			break;
-		case "tan":
-			outputnum = Math.tan(parseFloat(tempnum));
-			break;
-		case "exp":
-			outputnum = Math.exp(parseFloat(tempnum));
-			break;
-		case "sqrt":
-			outputnum = Math.sqrt(parseFloat(tempnum));
-			break;
-		case "factorial":
-			if (tempnum < 0 || !Number.isInteger(tempnum))
+	}
+	else if (operation == "flip")
+	{
+		outputnum = parseFloat(tempnum) * -1;
+	}
+	else if (operation == "power")
+	{
+		outputnum = Math.pow(parseFloat(tempnum), parseFloat(outputnum));
+	}
+	else if (operation == "naturallog")
+	{
+		outputnum = Math.log(parseFloat(tempnum));
+	}
+	else if (operation == "log")
+	{
+		outputnum = Math.log10(parseFloat(tempnum));
+	}
+	else if (operation == "sin")
+	{
+		outputnum = Math.sin(parseFloat(tempnum));
+	}
+	else if (operation == "cos")
+	{
+		outputnum = Math.cos(parseFloat(tempnum));
+	}
+	else if (operation == "tan")
+	{
+		outputnum = Math.tan(parseFloat(tempnum));
+	}
+	else if (operation == "exp")
+	{
+		outputnum = Math.exp(parseFloat(tempnum));
+	}
+	else if (operation == "sqrt")
+	{
+		outputnum = Math.sqrt(parseFloat(tempnum));
+	}
+	else if (operation == "factorial")
+	{
+		if (tempnum < 0 || !Number.isInteger(tempnum))
+		{
+			outputnum = 0;
+		}
+		else if (tempnum == 0 || tempnum == 1)
+		{
+			outputnum = 1;
+		}
+		else
+		{
+			outputnum = 1;
+			for (let i = 2; i <= tempnum; i++)
 			{
-				outputnum = 0;
+				outputnum *= i;
 			}
-			else if (tempnum == 0 || tempnum == 1)
-			{
-				outputnum = 1;
-			}
-			else
-			{
-				outputnum = 1;
-				for (let i = 2; i <= tempnum; i++)
-				{
-					outputnum *= i;
-				}
-			}
-			break;
-		case "gle":
-			glenum = parseFloat(outputnum);
-			if (tempnum > glenum)
-			{
-				outputnum = tempnum + " > " + glenum;
-			}
-			else if (tempnum < glenum)
-			{
-				outputnum = tempnum + " < " + glenum;
-			}
-			else
-			{
-				outputnum = tempnum + " = " + glenum;
-			}
-			break;
+		}
+	}
+	else if (operation == "gle")
+	{
+		glenum = parseFloat(outputnum);
+		if (tempnum > glenum)
+		{
+			outputnum = tempnum + " > " + glenum;
+		}
+		else if (tempnum < glenum)
+		{
+			outputnum = tempnum + " < " + glenum;
+		}
+		else
+		{
+			outputnum = tempnum + " = " + glenum;
+		}
 	}
 	lastoperation = operation;
 	document.getElementById("txtoutputdisplay").value = outputnum;
