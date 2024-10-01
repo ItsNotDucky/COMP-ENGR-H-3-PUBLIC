@@ -112,7 +112,7 @@ function arithmeticoperation()
 }
 function numdisplaychange()
 {
-	if (operation == "sin" || operation == "cos" || operation == "tan")
+	if (operation == "sin" || operation == "cos" || operation == "tan" || operation == "enter")
 	{
 		document.getElementById("txtoutputdisplay").value = selectedvalue
 		operation = null
@@ -240,7 +240,7 @@ function gleselected() {
 }
 function enter()
 {
-	if (operation != "gle" && operation != "percent")
+	if (operation != "gle" && operation != "percent" && operation != null)
 	{
 		if (operation == "square" || operation == "log" || operation == "naturallog" || operation == "exp" || operation == "sqrt")
 		{
