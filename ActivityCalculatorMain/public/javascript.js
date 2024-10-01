@@ -1,7 +1,6 @@
 window.addEventListener("load",addlistener);
 var selectedvalue, outputnum, tempnum, operation, glenum, lastoperation, overwrite;
-function addlistener()
-{
+function addlistener() {
 	overwrite = false;
 	outputnum = null;
 	tempnum = null;
@@ -55,185 +54,117 @@ function num7() {selectedvalue = 7; numdisplaychange();}
 function num8() {selectedvalue = 8; numdisplaychange();}
 function num9() {selectedvalue = 9; numdisplaychange();}
 function numpi() {selectedvalue = 3.14; numdisplaychange();}
-function numdecimal()
-{
-	if (document.getElementById("txtnumdisplay").value == "")
-	{
+function numdecimal() {
+	if (document.getElementById("txtnumdisplay").value == "") {
 		selectedvalue = "0.";
-	}
-	else
-	{
+	} else {
 		selectedvalue = ".";
 	}
 	numdisplaychange();
 }
-function checkvalue()
-{
+function checkvalue() {
 	numdisplay = document.getElementById("txtnumdisplay").value;
-	if (numdisplay == "")
-	{
+	if (numdisplay == "") {
 		alert("Lil bro you goofy ahh is missing an input.");
 		return false;
-	}
-	else
-	{
+	} else {
 		return true;
 	}
 }
-function arithmeticoperation()
-{
-	if (operation == "addition")
-	{
+function arithmeticoperation() {
+	if (operation == "addition") {
 		outputnum = parseFloat(tempnum) + parseFloat(outputnum);
-	}
-	else if (operation == "subtraction")
-	{
+	} else if (operation == "subtraction") {
 		outputnum = parseFloat(tempnum) - parseFloat(outputnum);
-	}
-	else if (operation == "multiplication")
-	{
+	} else if (operation == "multiplication") {
 		outputnum = parseFloat(tempnum) * parseFloat(outputnum);
-	}
-	else if (operation == "division")
-	{
+	} else if (operation == "division") {
 		outputnum = parseFloat(tempnum) / parseFloat(outputnum);
 	}
 }
-function numdisplaychange()
-{
-	if (["sin", "cos", "tan", "enter", "radians", "degrees", "log", "naturallog", "sqrt", "exp", "flip", "factorial"].includes(operation))
-	{
+function numdisplaychange() {
+	if (operation != "addition" && operation != "subtraction" && operation != "multiplication" && operation != "division"
+	&& operation != "percent" &&  operation != "power" && operation != "gle") {
 		document.getElementById("txtoutputdisplay").value = selectedvalue;
 		operation = null;
 	}
-	if (overwrite == true)
-	{
+	if (overwrite == true) {
 		document.getElementById("txtnumdisplay").value = selectedvalue;
 		outputdisplaychange();
 		overwrite = false;
-	}
-	else
-	{
+	} else {
 		document.getElementById("txtnumdisplay").value += selectedvalue;
 		outputdisplaychange();
 		overwrite = false;
 	}
 }
-function outputdisplaychange()
-{
+function outputdisplaychange() {
 	outputnum = document.getElementById("txtnumdisplay").value;
-	if (operation == "enter")
-	{
+	if (operation == "enter") {
 		operation = lastoperation;
 	}
 	arithmeticoperation()
-	if (operation == "percent")
-	{
+	if (operation == "percent") {
 		outputnum = (parseFloat(tempnum) * parseFloat(outputnum)) / 100;
-	}
-	else if (operation == "square")
-	{
+	} else if (operation == "square") {
 		outputnum = parseFloat(tempnum) * parseFloat(tempnum);
-	}
-	else if (operation == "radians")
-	{
+	} else if (operation == "radians") {
 		outputnum = parseFloat(tempnum) * (3.14 / 100);
-	}
-	else if (operation == "degrees")
-	{
+	} else if (operation == "degrees") {
 			outputnum = parseFloat(tempnum) * (100 / 3.14);
-	}
-	else if (operation == "flip")
-	{
+	} else if (operation == "flip") {
 		outputnum = parseFloat(tempnum) * -1;
-	}
-	else if (operation == "power")
-	{
+	} else if (operation == "power") {
 		outputnum = Math.pow(parseFloat(tempnum), parseFloat(outputnum));
-	}
-	else if (operation == "naturallog")
-	{
+	} else if (operation == "naturallog") {
 		outputnum = Math.log(parseFloat(tempnum));
-	}
-	else if (operation == "log")
-	{
+	} else if (operation == "log") {
 		outputnum = Math.log10(parseFloat(tempnum));
-	}
-	else if (operation == "sin")
-	{
+	} else if (operation == "sin") {
 		outputnum = Math.sin(parseFloat(tempnum));
-	}
-	else if (operation == "cos")
-	{
+	} else if (operation == "cos") {
 		outputnum = Math.cos(parseFloat(tempnum));
-	}
-	else if (operation == "tan")
-	{
+	} else if (operation == "tan") {
 		outputnum = Math.tan(parseFloat(tempnum));
-	}
-	else if (operation == "exp")
-	{
+	} else if (operation == "exp") {
 		outputnum = Math.exp(parseFloat(tempnum));
-	}
-	else if (operation == "sqrt")
-	{
+	} else if (operation == "sqrt") {
 		outputnum = Math.sqrt(parseFloat(tempnum));
-	}
-	else if (operation == "factorial")
-	{
-		if (tempnum < 0 || !Number.isInteger(tempnum))
-		{
+	} else if (operation == "factorial") {
+		if (tempnum < 0 || !Number.isInteger(tempnum)) {
 			outputnum = 0;
-		}
-		else if (tempnum == 0 || tempnum == 1)
-		{
+		} else if (tempnum == 0 || tempnum == 1) {
 			outputnum = 1;
-		}
-		else
-		{
+		} else {
 			outputnum = 1;
-			for (let i = 2; i <= tempnum; i++)
-			{
+			for (let i = 2; i <= tempnum; i++) {
 				outputnum *= i;
 			}
 		}
-	}
-	else if (operation == "gle")
-	{
+	} else if (operation == "gle") {
 		glenum = parseFloat(outputnum);
-		if (tempnum > glenum)
-		{
+		if (tempnum > glenum) {
 			outputnum = tempnum + " > " + glenum;
-		}
-		else if (tempnum < glenum)
-		{
+		} else if (tempnum < glenum) {
 			outputnum = tempnum + " < " + glenum;
-		}
-		else
-		{
+		} else {
 			outputnum = tempnum + " = " + glenum;
 		}
 	}
 	lastoperation = operation;
 	document.getElementById("txtoutputdisplay").value = outputnum;
 }
-function tempnumstate(status)
-{
-	switch (status)
-	{
-		case "outputdisplay":
-			tempnum = parseFloat(document.getElementById("txtoutputdisplay").value);
-			overwrite = true;
-			break;
-		case "outputdisplay2":
-			tempnumstate("outputdisplay");
-			document.getElementById("txtnumdisplay").value = document.getElementById("txtoutputdisplay").value;
-			outputdisplaychange();
-			break;
+function tempnumstate(status) {
+	if (status == "outputdisplay") {
+		tempnum = parseFloat(document.getElementById("txtoutputdisplay").value);
+		overwrite = true;
+	} else if (status == "outputdisplay2") {
+		tempnumstate("outputdisplay");
+		document.getElementById("txtnumdisplay").value = document.getElementById("txtoutputdisplay").value;
+		outputdisplaychange();
 	}
 }
-function clear()
-{
+function clear() {
 	document.getElementById("txtnumdisplay").value = null;
 	document.getElementById("txtoutputdisplay").value = null;
 	overwrite = false;
@@ -243,30 +174,21 @@ function clear()
 	glenum = null;
 	operation = null;
 }
-function enter()
-{
-	if (["gle", "percent", null].includes(operation) == false)
-	{
-		if (["square", "log", "naturallog", "exp", "sqrt"].includes(operation))
-		{
+function enter() {
+	if (operation != "gle" && operation != "percent" && operation != null) {
+		if (operation == "square" || operation == "log" || operation == "naturallog" || operation == "exp" || operation == "sqrt") {
 			overwrite = true;
 			selectedvalue = document.getElementById("txtoutputdisplay").value;
 			numdisplaychange();
-		}
-		else if (operation == "sin" || operation == "cos" || operation == "tan")
-		{
+		} else if (operation == "sin" || operation == "cos" || operation == "tan") {
 			tempnumstate("outputdisplay2");
-		}
-		if (["addition", "subtraction", "multiplication", "division"].includes(operation))
-		{
+		} if (operation == "addition" || operation == "subtraction" || operation == "multiplication" || operation == "division") {
 			outputnum = document.getElementById("txtoutputdisplay").value;
 			tempnum = document.getElementById("txtnumdisplay").value;
 			arithmeticoperation();
 			document.getElementById("txtoutputdisplay").value = outputnum;
 			overwrite = true;
-		}
-		else if (checkvalue() == true)
-		{
+		} else if (checkvalue() == true) {
 			operation = "enter";
 			tempnumstate("outputdisplay2");
 		}
@@ -291,18 +213,13 @@ function tan() {gleselected(); if (checkvalue() == true) {operation = "tan"; tem
 function exp() {gleselected(); if (checkvalue() == true) {operation = "exp"; tempnumstate("outputdisplay2");}}
 function sqrt() {gleselected(); if (checkvalue() == true) {operation = "sqrt"; tempnumstate("outputdisplay2");}}
 function factorial() {gleselected(); if (checkvalue() == true) {operation = "factorial"; tempnumstate("outputdisplay2");}}
-function gle()
-{
-	if (operation == "gle")
-	{
+function gle() {
+	if (operation == "gle") {
 		document.getElementById("txtoutputdisplay").value = document.getElementById("txtnumdisplay").value;
 		operation = null;
 		overwrite = false;
-	}
-	else
-	{
-		if (checkvalue() == true)
-		{
+	} else {
+		if (checkvalue() == true) {
 			operation = "gle";
 			tempnumstate("outputdisplay");
 		}
