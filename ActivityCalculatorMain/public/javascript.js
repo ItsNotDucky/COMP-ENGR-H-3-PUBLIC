@@ -112,10 +112,10 @@ function arithmeticoperation()
 }
 function numdisplaychange()
 {
-	if (operation == "sin" || operation == "cos" || operation == "tan" || operation == "enter")
+	if (["sin", "cos", "tan", "enter", "radians", "degrees", "log", "naturallog", "sqrt", "exp", "flip", "factorial"].includes(operation))
 	{
-		document.getElementById("txtoutputdisplay").value = selectedvalue
-		operation = null
+		document.getElementById("txtoutputdisplay").value = selectedvalue;
+		operation = null;
 	}
 	if (overwrite == true)
 	{
@@ -182,7 +182,7 @@ function outputdisplaychange()
 		case "factorial":
 			if (tempnum < 0 || !Number.isInteger(tempnum))
 			{
-				outputnum = 0
+				outputnum = 0;
 			}
 			else if (tempnum == 0 || tempnum == 1)
 			{
@@ -231,18 +231,19 @@ function tempnumstate(status)
 			break;
 	}
 }
-function gleselected() {
+function gleselected()
+{
 	if (operation == "gle")
 	{
 		operation = null;
-		outputdisplaychange()
+		outputdisplaychange();
 	}
 }
 function enter()
 {
-	if (operation != "gle" && operation != "percent" && operation != null)
+	if (operation != "gle" && operation != "percent" && operation != null);
 	{
-		if (operation == "square" || operation == "log" || operation == "naturallog" || operation == "exp" || operation == "sqrt")
+		if (["square", "log", "naturallog", "exp", "sqrt"].includes(operation))
 		{
 			overwrite = true;
 			selectedvalue = document.getElementById("txtoutputdisplay").value
@@ -252,7 +253,7 @@ function enter()
 		{
 			tempnumstate("outputdisplay2");
 		}
-		if (operation == "addition" || operation == "subtraction" || operation == "multiplication" || operation == "division")
+		if (["addition", "subtraction", "multiplication", "division"].includes(operation))
 		{
 			outputnum = document.getElementById("txtoutputdisplay").value;
 			tempnum = document.getElementById("txtnumdisplay").value;
