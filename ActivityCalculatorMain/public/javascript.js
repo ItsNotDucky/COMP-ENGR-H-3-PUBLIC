@@ -9,24 +9,24 @@ function addlistener()
 	lastoperation = null;
 	glenum = null;
 	operation = null;
-    document.getElementById("txtnumdisplay").disabled = true;
-    document.getElementById("txtoutputdisplay").disabled = true;
-    document.getElementById("btndecimal").addEventListener("click", numdecimal);
-    document.getElementById("btn0").addEventListener("click", num0);
-    document.getElementById("btn1").addEventListener("click", num1);
-    document.getElementById("btn2").addEventListener("click", num2);
-    document.getElementById("btn3").addEventListener("click", num3);
-    document.getElementById("btn4").addEventListener("click", num4);
-    document.getElementById("btn5").addEventListener("click", num5);
-    document.getElementById("btn6").addEventListener("click", num6);
-    document.getElementById("btn7").addEventListener("click", num7);
-    document.getElementById("btn8").addEventListener("click", num8);
-    document.getElementById("btn9").addEventListener("click", num9);
-    document.getElementById("btnpi").addEventListener("click", numpi);
-    document.getElementById("btnclear").addEventListener("click", clear);
-    document.getElementById("btnadd").addEventListener("click", addition);
-    document.getElementById("btnsubtract").addEventListener("click", subtraction);
-    document.getElementById("btnmultiply").addEventListener("click", multiplication);
+	document.getElementById("txtnumdisplay").disabled = true;
+	document.getElementById("txtoutputdisplay").disabled = true;
+	document.getElementById("btndecimal").addEventListener("click", numdecimal);
+	document.getElementById("btn0").addEventListener("click", num0);
+	document.getElementById("btn1").addEventListener("click", num1);
+	document.getElementById("btn2").addEventListener("click", num2);
+	document.getElementById("btn3").addEventListener("click", num3);
+	document.getElementById("btn4").addEventListener("click", num4);
+	document.getElementById("btn5").addEventListener("click", num5);
+	document.getElementById("btn6").addEventListener("click", num6);
+	document.getElementById("btn7").addEventListener("click", num7);
+	document.getElementById("btn8").addEventListener("click", num8);
+	document.getElementById("btn9").addEventListener("click", num9);
+	document.getElementById("btnpi").addEventListener("click", numpi);
+	document.getElementById("btnclear").addEventListener("click", clear);
+	document.getElementById("btnadd").addEventListener("click", addition);
+	document.getElementById("btnsubtract").addEventListener("click", subtraction);
+	document.getElementById("btnmultiply").addEventListener("click", multiplication);
 	document.getElementById("btndivide").addEventListener("click", division);
 	document.getElementById("btnpercent").addEventListener("click", percent);
 	document.getElementById("btnsquare").addEventListener("click", square);
@@ -70,9 +70,9 @@ function numdecimal()
 }
 function clear()
 {
-    document.getElementById("txtnumdisplay").value = null;
-    document.getElementById("txtoutputdisplay").value = null;
-    overwrite = false;
+	document.getElementById("txtnumdisplay").value = null;
+	document.getElementById("txtoutputdisplay").value = null;
+	overwrite = false;
 	outputnum = null;
 	tempnum = null;
 	lastoperation = null;
@@ -132,54 +132,54 @@ function numdisplaychange()
 }
 function outputdisplaychange()
 {
-    outputnum = document.getElementById("txtnumdisplay").value;
-    if (operation == "enter")
-    {
-        operation = lastoperation;
-    }
-    arithmeticoperation()
-    switch (operation)
-    {
-        case "percent":
-            outputnum = (parseFloat(tempnum) * parseFloat(outputnum)) / 100;
-            break;
-        case "square":
-            outputnum = parseFloat(tempnum) * parseFloat(tempnum);
-            break;
-        case "radians":
-            outputnum = parseFloat(tempnum) * (3.14 / 100);
-            break;
-        case "degrees":
-            outputnum = parseFloat(tempnum) * (100 / 3.14);
-            break;
-        case "flip":
-            outputnum = parseFloat(tempnum) * -1;
-            break;
-        case "power":
-            outputnum = Math.pow(parseFloat(tempnum), parseFloat(outputnum));
-            break;
-        case "naturallog":
-            outputnum = Math.log(parseFloat(tempnum));
-            break;
-        case "log":
-            outputnum = Math.log10(parseFloat(tempnum));
-            break;
-        case "sin":
-            outputnum = Math.sin(parseFloat(tempnum));
-            break;
-        case "cos":
-            outputnum = Math.cos(parseFloat(tempnum));
-            break;
-        case "tan":
-            outputnum = Math.tan(parseFloat(tempnum));
-            break;
-        case "exp":
-            outputnum = Math.exp(parseFloat(tempnum));
-            break;
-        case "sqrt":
-            outputnum = Math.sqrt(parseFloat(tempnum));
-            break;
-        case "factorial":
+	outputnum = document.getElementById("txtnumdisplay").value;
+	if (operation == "enter")
+	{
+		operation = lastoperation;
+	}
+	arithmeticoperation()
+	switch (operation)
+	{
+		case "percent":
+			outputnum = (parseFloat(tempnum) * parseFloat(outputnum)) / 100;
+			break;
+		case "square":
+			outputnum = parseFloat(tempnum) * parseFloat(tempnum);
+			break;
+		case "radians":
+			outputnum = parseFloat(tempnum) * (3.14 / 100);
+			break;
+		case "degrees":
+			outputnum = parseFloat(tempnum) * (100 / 3.14);
+			break;
+		case "flip":
+			outputnum = parseFloat(tempnum) * -1;
+			break;
+		case "power":
+			outputnum = Math.pow(parseFloat(tempnum), parseFloat(outputnum));
+			break;
+		case "naturallog":
+			outputnum = Math.log(parseFloat(tempnum));
+			break;
+		case "log":
+			outputnum = Math.log10(parseFloat(tempnum));
+			break;
+		case "sin":
+			outputnum = Math.sin(parseFloat(tempnum));
+			break;
+		case "cos":
+			outputnum = Math.cos(parseFloat(tempnum));
+			break;
+		case "tan":
+			outputnum = Math.tan(parseFloat(tempnum));
+			break;
+		case "exp":
+			outputnum = Math.exp(parseFloat(tempnum));
+			break;
+		case "sqrt":
+			outputnum = Math.sqrt(parseFloat(tempnum));
+			break;
+		case "factorial":
 			if (tempnum < 0 || !Number.isInteger(tempnum))
 			{
 				outputnum = 0
@@ -193,49 +193,50 @@ function outputdisplaychange()
 				outputnum = 1;
 				for (let i = 2; i <= tempnum; i++)
 				{
-				outputnum *= i;
+					outputnum *= i;
 				}
 			}
-    break;
-        case "gle":
-            glenum = parseFloat(outputnum);
-            if (tempnum > glenum) {
-                outputnum = tempnum + " > " + glenum;
-            }
-            else if (tempnum < glenum)
-            {
-                outputnum = tempnum + " < " + glenum;
-            }
-            else
-            {
-                outputnum = tempnum + " = " + glenum;
-            }
-            break;
-    }
-    lastoperation = operation;
-    document.getElementById("txtoutputdisplay").value = outputnum;
+			break;
+		case "gle":
+			glenum = parseFloat(outputnum);
+			if (tempnum > glenum)
+			{
+				outputnum = tempnum + " > " + glenum;
+			}
+			else if (tempnum < glenum)
+			{
+				outputnum = tempnum + " < " + glenum;
+			}
+			else
+			{
+				outputnum = tempnum + " = " + glenum;
+			}
+			break;
+	}
+	lastoperation = operation;
+	document.getElementById("txtoutputdisplay").value = outputnum;
 }
 function tempnumstate(status)
 {
-    switch (status)
-    {
+	switch (status)
+	{
 		case "outputdisplay":
-            tempnum = parseFloat(document.getElementById("txtoutputdisplay").value);
-            overwrite = true;
-            break;
-        case "outputdisplay2":
-            tempnumstate("outputdisplay");
-            document.getElementById("txtnumdisplay").value = document.getElementById("txtoutputdisplay").value;
-            outputdisplaychange();
-            break;
-    }
+			tempnum = parseFloat(document.getElementById("txtoutputdisplay").value);
+			overwrite = true;
+			break;
+		case "outputdisplay2":
+			tempnumstate("outputdisplay");
+			document.getElementById("txtnumdisplay").value = document.getElementById("txtoutputdisplay").value;
+			outputdisplaychange();
+			break;
+	}
 }
 function gleselected() {
-    if (operation == "gle")
-    {
-        operation = null;
-        outputdisplaychange()
-    }
+	if (operation == "gle")
+	{
+		operation = null;
+		outputdisplaychange()
+	}
 }
 function enter()
 {
@@ -256,9 +257,9 @@ function enter()
 			outputnum = document.getElementById("txtoutputdisplay").value;
 			tempnum = document.getElementById("txtnumdisplay").value;
 			arithmeticoperation()
-            document.getElementById("txtoutputdisplay").value = outputnum;
-            overwrite = true;
-        }
+			document.getElementById("txtoutputdisplay").value = outputnum;
+			overwrite = true;
+		}
 		else if (checkvalue() == true)
 		{
 			operation = "enter";
@@ -359,25 +360,25 @@ function gle()
 	{
 		if (checkvalue() == true)
 		{
-				operation = "gle";
-				tempnumstate("outputdisplay");
+			operation = "gle";
+			tempnumstate("outputdisplay");
 		}
 	}
 }
 function naturallog()
 {
 	gleselected()
-    if (checkvalue() == true)
-    {
+	if (checkvalue() == true)
+	{
 		operation = "naturallog";
 		tempnumstate("outputdisplay2");
-    }
+	}
 }
 function log()
 {
 	gleselected()
-    if (checkvalue() == true)
-    {
+	if (checkvalue() == true)
+	{
 		operation = "log";
 		tempnumstate("outputdisplay2");
 	}
@@ -385,25 +386,25 @@ function log()
 function power()
 {
 	gleselected()
-    if (checkvalue() == true)
-    {
+	if (checkvalue() == true)
+	{
 		operation = "power";
 		tempnumstate("outputdisplay2");
-    }
+	}
 }
 function sin()
 {
 	gleselected()
-    if (checkvalue() == true)
-    {
+	if (checkvalue() == true)
+	{
 		operation = "sin";
 		tempnumstate("outputdisplay2");
-    }
+	}
 }
 function cos()
 {
 	gleselected()
-    if (checkvalue() == true)
+	if (checkvalue() == true)
 	{
 		operation = "cos";
 		tempnumstate("outputdisplay2");
@@ -412,7 +413,7 @@ function cos()
 function tan()
 {
 	gleselected()
-    if (checkvalue() == true)
+	if (checkvalue() == true)
 	{
 		operation = "tan";
 		tempnumstate("outputdisplay2");
@@ -421,7 +422,7 @@ function tan()
 function exp()
 {
 	gleselected()
-    if (checkvalue() == true)
+	if (checkvalue() == true)
 	{
 		operation = "exp";
 		tempnumstate("outputdisplay2");
@@ -430,7 +431,7 @@ function exp()
 function sqrt()
 {
 	gleselected()
-    if (checkvalue() == true)
+	if (checkvalue() == true)
 	{
 		operation = "sqrt";
 		tempnumstate("outputdisplay2");
