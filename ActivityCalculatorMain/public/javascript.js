@@ -45,17 +45,17 @@ function addlistener()
 	document.getElementById("btnsqrt").addEventListener("click", sqrt);
 	document.getElementById("btnfactorial").addEventListener("click", factorial);
 }
-function num0() { selectedvalue = 0; numdisplaychange(); }
-function num1() { selectedvalue = 1; numdisplaychange(); }
-function num2() { selectedvalue = 2; numdisplaychange(); }
-function num3() { selectedvalue = 3; numdisplaychange(); }
-function num4() { selectedvalue = 4; numdisplaychange(); }
-function num5() { selectedvalue = 5; numdisplaychange(); }
-function num6() { selectedvalue = 6; numdisplaychange(); }
-function num7() { selectedvalue = 7; numdisplaychange(); }
-function num8() { selectedvalue = 8; numdisplaychange(); }
-function num9() { selectedvalue = 9; numdisplaychange(); }
-function numpi() { selectedvalue = 3.14; numdisplaychange(); }
+function num0() {selectedvalue = 0; numdisplaychange();}
+function num1() {selectedvalue = 1; numdisplaychange();}
+function num2() {selectedvalue = 2; numdisplaychange();}
+function num3() {selectedvalue = 3; numdisplaychange();}
+function num4() {selectedvalue = 4; numdisplaychange();}
+function num5() {selectedvalue = 5; numdisplaychange();}
+function num6() {selectedvalue = 6; numdisplaychange();}
+function num7() {selectedvalue = 7; numdisplaychange();}
+function num8() {selectedvalue = 8; numdisplaychange();}
+function num9() {selectedvalue = 9; numdisplaychange();}
+function numpi() {selectedvalue = 3.14; numdisplaychange();}
 function numdecimal()
 {
 	if (document.getElementById("txtnumdisplay").value == "")
