@@ -246,8 +246,8 @@ function enter()
 		if (["square", "log", "naturallog", "exp", "sqrt"].includes(operation))
 		{
 			overwrite = true;
-			selectedvalue = document.getElementById("txtoutputdisplay").value
-			numdisplaychange()
+			selectedvalue = document.getElementById("txtoutputdisplay").value;
+			numdisplaychange();
 		}
 		else if (operation == "sin" || operation == "cos" || operation == "tan")
 		{
@@ -257,7 +257,7 @@ function enter()
 		{
 			outputnum = document.getElementById("txtoutputdisplay").value;
 			tempnum = document.getElementById("txtnumdisplay").value;
-			arithmeticoperation()
+			arithmeticoperation();
 			document.getElementById("txtoutputdisplay").value = outputnum;
 			overwrite = true;
 		}
@@ -270,7 +270,7 @@ function enter()
 }
 function addition()
 {
-	gleselected()
+	gleselected();
 	if  (checkvalue() == true)
 	{
 		operation = "addition";
@@ -279,34 +279,34 @@ function addition()
 }
 function subtraction()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
-		operation = "subtraction"
+		operation = "subtraction";
 		tempnumstate("outputdisplay");
 	}
 }
 function multiplication()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
-		operation = "multiplication"
+		operation = "multiplication";
 		tempnumstate("outputdisplay");
 	}
 }
 function division()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
-		operation = "division"
+		operation = "division";
 		tempnumstate("outputdisplay");
 	}
 }
 function percent()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "percent";
@@ -315,7 +315,7 @@ function percent()
 }
 function square()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "square";
@@ -324,7 +324,7 @@ function square()
 }
 function radians()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "radians";
@@ -333,7 +333,7 @@ function radians()
 }
 function degrees()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "degrees";
@@ -342,7 +342,7 @@ function degrees()
 }
 function flip()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "flip";
@@ -368,7 +368,7 @@ function gle()
 }
 function naturallog()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "naturallog";
@@ -377,7 +377,7 @@ function naturallog()
 }
 function log()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "log";
@@ -386,7 +386,7 @@ function log()
 }
 function power()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "power";
@@ -395,7 +395,7 @@ function power()
 }
 function sin()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "sin";
@@ -404,7 +404,7 @@ function sin()
 }
 function cos()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "cos";
@@ -413,7 +413,7 @@ function cos()
 }
 function tan()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "tan";
@@ -422,7 +422,7 @@ function tan()
 }
 function exp()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "exp";
@@ -431,7 +431,7 @@ function exp()
 }
 function sqrt()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "sqrt";
@@ -440,7 +440,7 @@ function sqrt()
 }
 function factorial()
 {
-	gleselected()
+	gleselected();
 	if (checkvalue() == true)
 	{
 		operation = "factorial";
