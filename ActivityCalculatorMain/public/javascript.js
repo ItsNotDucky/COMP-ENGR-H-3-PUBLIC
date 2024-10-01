@@ -326,8 +326,8 @@ function radians()
 	gleselected()
 	if (checkvalue() == true)
 	{
-			operation = "radians";
-			tempnumstate("outputdisplay2");
+		operation = "radians";
+		tempnumstate("outputdisplay2");
 	}
 }
 function degrees()
