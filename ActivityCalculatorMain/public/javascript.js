@@ -1,6 +1,5 @@
 window.addEventListener("load",addlistener);
 var selectedvalue, outputnum, tempnum, operation, glenum, lastoperation, overwrite;
-
 function addlistener()
 {
 	overwrite = false;
