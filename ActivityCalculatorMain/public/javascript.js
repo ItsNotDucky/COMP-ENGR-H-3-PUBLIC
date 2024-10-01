@@ -278,7 +278,7 @@ function radians() {gleselected(); if (checkvalue() == true) {operation = "radia
 function degrees() {gleselected(); if (checkvalue() == true) {operation = "degrees"; tempnumstate("outputdisplay2");}}
 function flip() {gleselected(); if (checkvalue() == true) {operation = "flip"; tempnumstate("outputdisplay2");}}
 function naturallog() {gleselected(); if (checkvalue() == true) {operation = "naturallog"; tempnumstate("outputdisplay2");}}
-function log(){gleselected(); if (checkvalue() == true) {operation = "log"; tempnumstate("outputdisplay2");}}
+function log() {gleselected(); if (checkvalue() == true) {operation = "log"; tempnumstate("outputdisplay2");}}
 function power() {gleselected(); if (checkvalue() == true) {operation = "power"; tempnumstate("outputdisplay2");}}
 function sin() {gleselected(); if (checkvalue() == true) {operation = "sin"; tempnumstate("outputdisplay2");}}
 function cos() {gleselected(); if (checkvalue() == true) {operation = "cos"; tempnumstate("outputdisplay2");}}
