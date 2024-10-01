@@ -260,14 +260,7 @@ function enter()
 		}
 	}
 }
-function gleselected()
-{
-	if (operation == "gle")
-	{
-		operation = null;
-		outputdisplaychange();
-	}
-}
+function gleselected() {if (operation == "gle") {operation = null; outputdisplaychange();}}
 function addition() {gleselected(); if  (checkvalue() == true) {operation = "addition"; tempnumstate("outputdisplay");}}
 function subtraction() {gleselected(); if (checkvalue() == true) {operation = "subtraction"; tempnumstate("outputdisplay");}}
 function multiplication() {gleselected(); if (checkvalue() == true) {operation = "multiplication"; tempnumstate("outputdisplay");}}
