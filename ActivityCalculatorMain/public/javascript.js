@@ -111,9 +111,9 @@ function outputdisplaychange() {
 	} else if (operation == "square") {
 		outputnum = parseFloat(tempnum) * parseFloat(tempnum);
 	} else if (operation == "radians") {
-		outputnum = parseFloat(tempnum) * (3.14 / 100);
+		outputnum = parseFloat(tempnum) * (3.14 / 180);
 	} else if (operation == "degrees") {
-			outputnum = parseFloat(tempnum) * (100 / 3.14);
+		outputnum = parseFloat(tempnum) * (180 / 3.14);
 	} else if (operation == "flip") {
 		outputnum = parseFloat(tempnum) * -1;
 	} else if (operation == "power") {
