@@ -1,7 +1,16 @@
 body {
+	font-family: Arial;
 	text-align: center;
 }
 label {
-	width: 100px;
+	width: 110px;
 	display: inline-block;
+}
+button[id="stnuserinfo"] {
+	border: lightgray;
+	width: 220px;
+	background-color: lightgreen;
+}
+button:hover[id="stnuserinfo"] {
+	background-color: green;
 }
